@@ -1,11 +1,15 @@
 import styled from "styled-components";
+import GlobalStyle from "./GlobalStyle";
 
-function HomeStyle(props) {
+function StyledHome(props) {
   return (
-    <Wrapper>
-      <Logo src={props.src}></Logo>
-      <Button onClick={props.route}>{props.text}</Button>
-    </Wrapper>
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        <Logo src={props.src}></Logo>
+        <Button onClick={props.route}>{props.text}</Button>
+      </Wrapper>
+    </>
   );
 }
 
@@ -25,11 +29,11 @@ const Logo = styled.img`
 `;
 
 const Wrapper = styled.div`
-  height: 92vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-export default HomeStyle;
+export default StyledHome;
