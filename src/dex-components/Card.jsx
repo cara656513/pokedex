@@ -7,7 +7,7 @@ const Card = ({ data, addPokemon }) => {
   return (
     <StyledCard
       onClick={() => {
-        navigate("/detail");
+        navigate(`/detail/${data.id}`);
       }}
       key={data.id}
     >

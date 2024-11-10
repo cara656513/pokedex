@@ -1,18 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import DetailStyle from "../style/DetailStyle";
 
 const Detail = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   return (
     <div>
-      <h1>detail</h1>
-      <button
-        onClick={() => {
+      <DetailStyle
+        toDex={() => {
           navigate("/dex");
         }}
-      >
-        뒤로 가기
-      </button>
+        id={id}
+      />
     </div>
   );
 };
