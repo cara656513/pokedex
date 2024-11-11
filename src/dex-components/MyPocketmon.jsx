@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { Button, StyledCard } from "../style/CardStyle";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
-const MyPocketmon = ({ addedPokemons, deletePokemon }) => {
+const MyPocketmon = () => {
+  const { addedPokemons, deletePokemon } = useContext(Context);
+
   return (
     <>
       <Wrapper>

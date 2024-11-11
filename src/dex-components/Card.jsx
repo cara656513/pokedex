@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { Button, StyledCard } from "../style/CardStyle";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
-const Card = ({ data, addPokemon }) => {
+const Card = ({ data }) => {
   const navigate = useNavigate();
+  const { addPokemon } = useContext(Context);
 
   return (
     <StyledCard

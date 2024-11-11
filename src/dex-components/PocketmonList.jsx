@@ -1,13 +1,16 @@
 import styled from "styled-components";
-import MOCK_DATA from "../data/data";
 import Card from "./Card";
+import { useContext } from "react";
+import { Context } from "../context/Context";
 
-const PocketmonList = ({ addPokemon }) => {
+const PocketmonList = () => {
+  const { MOCK_DATA } = useContext(Context);
+
   return (
     <>
       <Wrapper>
         {MOCK_DATA.map((data) => {
-          return <Card key={data.id} data={data} addPokemon={addPokemon} />;
+          return <Card key={data.id} data={data} />;
         })}
       </Wrapper>
     </>

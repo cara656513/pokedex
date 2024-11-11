@@ -3,6 +3,7 @@ import MyPocketmon from "../dex-components/MyPocketmon";
 import PocketmonList from "../dex-components/PocketmonList";
 import DexStyle from "../style/DexStyle";
 import { useState } from "react";
+import { Context } from "../context/Context";
 
 const Dex = () => {
   const [addedPokemons, setAddedPokemon] = useState([]);
@@ -34,21 +35,23 @@ const Dex = () => {
 
   return (
     <>
-      <DexStyle
-        inside={
-          <>
-            <MyPocketmon
-              addedPokemons={addedPokemons}
-              deletePokemon={DeletePokemon}
-            />
-            <PocketmonList
-              addedPokemons={addedPokemons}
-              setAddedPokemon={setAddedPokemon}
-              addPokemon={AddPokemon}
-            />
-          </>
-        }
-      ></DexStyle>
+      <Context.Provider
+        value={{
+          addedPokemons,
+          deletePokemon: DeletePokemon,
+          addPokemon: AddPokemon,
+          MOCK_DATA,
+        }}
+      >
+        <DexStyle
+          inside={
+            <>
+              <MyPocketmon />
+              <PocketmonList />
+            </>
+          }
+        ></DexStyle>
+      </Context.Provider>
     </>
   );
 };
