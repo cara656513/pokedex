@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import MOCK_DATA from "../data/data";
 import Card from "./Card";
-import { useParams } from "react-router-dom";
 
 const PocketmonList = ({ addPokemon }) => {
   return (
