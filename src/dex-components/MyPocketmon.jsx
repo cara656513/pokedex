@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Button, StyledCard } from "../style/CardStyle";
 import { useContext } from "react";
 import { Context } from "../context/Context";
+import Card from "./Card";
 
 const MyPocketmon = () => {
   const { addedPokemons, deletePokemon } = useContext(Context);
@@ -14,11 +14,7 @@ const MyPocketmon = () => {
         <CardWrapper>
           {addedPokemons.map((data) => {
             return (
-              <AddedCard
-                key={data.id}
-                data={data}
-                deletePokemon={deletePokemon}
-              />
+              <Card key={data.id} data={data} deletePokemon={deletePokemon} />
             );
           })}
           {Array(6 - addedPokemons.length)
@@ -75,19 +71,19 @@ const EmptyCard = () => {
   );
 };
 
-const AddedCard = ({ data, deletePokemon }) => {
-  return (
-    <StyledCard>
-      <div>
-        <img src={data.img_url} />
-        <h3>{data.korean_name}</h3>
-        <p>no.{data.id}</p>
-        <Button onClick={deletePokemon} id={data.id}>
-          제거
-        </Button>
-      </div>
-    </StyledCard>
-  );
-};
+// const AddedCard = ({ data, deletePokemon }) => {
+//   return (
+//     <StyledCard>
+//       <div>
+//         <img src={data.img_url} />
+//         <h3>{data.korean_name}</h3>
+//         <p>no.{data.id}</p>
+//         <Button onClick={deletePokemon} id={data.id}>
+//           제거
+//         </Button>
+//       </div>
+//     </StyledCard>
+//   );
+// };
 
 export default MyPocketmon;
