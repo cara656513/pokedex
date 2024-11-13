@@ -1,7 +1,7 @@
 # Pokemon Dex 만들기
 - React에서 props drilling과 Context API를 적용하여 데이터 흐름을 이해할 수 있어요.
 - React-router-dom 을 이용해 SPA 을 구현 할 수 있어요!
-- 🔭[배포용 링크](https://pokedex-hazel-gamma.vercel.app/dex)
+- 🔭[배포용 링크](https://pokedex-hazel-gamma.vercel.app/)
 <br>
 
 ## 💻기술 스택
