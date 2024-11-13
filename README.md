@@ -11,31 +11,31 @@
 <br>
 
 ## ✔필수 요구사항
-- 제출 폼 UI 구현
-- 메달 집계 CRUD 기능
-- 메달 집계 정렬
-- 레이아웃 설정
-- 컴포넌트 구조
+- 프로젝트 셋업 및 기본 페이지, 컴포넌트 구성
+- 포켓몬 리스트와 선택 기능 구현
+- 포켓몬 선택 해제 및 알림 기능 추가
+- 포켓몬 디테일 페이지 구현
+- Context API로 리팩터링 및 최종 스타일링
 <br>
 
 ## 👍선택 요구사항
-- 중복 국가 처리
-- 존재하지 않는 국가 알림
-- 총 메달 수 정렬
-- 로컬 스토리지 활용
+- Redux Toolkit으로 리팩터링하기
+- 디테일 페이지에 '추가' 버튼 추가하기
+- 리스트 페이지의 데이터를 유지시키기
+- UI 라이브러리 활용하기
 <br>
 
 ## 🎥기능 구현
-- 기본 레이아웃을 설정하고, 입력 폼을 구현했습니다.
+- 리액트 라우터 돔으로 Home, Dex, Detail 페이지를 만들었습니다.
+![image](https://github.com/user-attachments/assets/859bfc61-d4a0-47e2-9e55-aaeb6c27b89e)
 
-메달 수는 99개까지 입력 가능하게 하고, 빈 국가명과 중복된 국가명은 신규 등록되지 않도록 했습니다.
+- props-drilling 브랜치에 포켓몬 리스트와 선택 기능을 구현했습니다.
+![image](https://github.com/user-attachments/assets/4911cb18-a0af-4abb-8835-1d9b89ffce8c)
 
-![image](https://github.com/user-attachments/assets/cba8080b-69dd-4124-adfd-7fdc6800883f)
+- 선택 해제 및 알림 기능을 추가하였습니다.
+![image](https://github.com/user-attachments/assets/d8c81735-1c5f-4088-b8a3-ff71af01d7ab)
 
-- 메달 집계 리스트를 출력하고 CRUD 기능을 구현했습니다.
+- 포켓몬 디테일 페이지를 구현했습니다.
+![image](https://github.com/user-attachments/assets/b606cf20-256a-42b2-bdd5-bacc51c0121e)
 
-금메달 순위대로 정렬되도록 하고, 없는 국가는 업데이트되지 않도록 했습니다.
-
-![image](https://github.com/user-attachments/assets/0bb1b37b-52f1-40fc-bc7a-6622fc5aabd3)
-
-- MedalInput, MedalList로 컴포넌트를 분리했습니다.
+- context 브랜치에 리팩터링했습니다.
