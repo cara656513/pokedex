@@ -42,9 +42,8 @@ const Dex = () => {
               deletePokemon={DeletePokemon}
             />
             <PocketmonList
-              addedPokemons={addedPokemons}
-              setAddedPokemon={setAddedPokemon}
               addPokemon={AddPokemon}
+              deletePokemon={DeletePokemon}
             />
           </>
         }

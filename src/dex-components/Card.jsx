@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button, StyledCard } from "../style/CardStyle";
 
-const Card = ({ data, addPokemon }) => {
+const Card = ({ data, addPokemon, text, deletePokemon }) => {
   const navigate = useNavigate();
 
   return (
@@ -15,8 +15,11 @@ const Card = ({ data, addPokemon }) => {
         <img src={data.img_url} />
         <h3>{data.korean_name}</h3>
         <p>no.{data.id}</p>
-        <Button onClick={addPokemon} id={data.id}>
-          추가
+        <Button
+          onClick={text === "추가" ? addPokemon : deletePokemon}
+          id={data.id}
+        >
+          {text}
         </Button>
       </div>
     </StyledCard>

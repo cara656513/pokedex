@@ -2,12 +2,20 @@ import styled from "styled-components";
 import MOCK_DATA from "../data/data";
 import Card from "./Card";
 
-const PocketmonList = ({ addPokemon }) => {
+const PocketmonList = ({ addPokemon, deletePokemon }) => {
   return (
     <>
       <Wrapper>
         {MOCK_DATA.map((data) => {
-          return <Card key={data.id} data={data} addPokemon={addPokemon} />;
+          return (
+            <Card
+              key={data.id}
+              data={data}
+              addPokemon={addPokemon}
+              deletePokemon={deletePokemon}
+              text={"추가"}
+            />
+          );
         })}
       </Wrapper>
     </>
