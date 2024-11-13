@@ -76,19 +76,4 @@ const EmptyCard = () => {
   );
 };
 
-// const AddedCard = ({ data, deletePokemon }) => {
-//   return (
-//     <StyledCard>
-//       <div>
-//         <img src={data.img_url} />
-//         <h3>{data.korean_name}</h3>
-//         <p>no.{data.id}</p>
-//         <Button onClick={deletePokemon} id={data.id}>
-//           제거
-//         </Button>
-//       </div>
-//     </StyledCard>
-//   );
-// };
-
 export default MyPocketmon;
