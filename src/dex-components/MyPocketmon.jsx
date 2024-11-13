@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import { Button, StyledCard } from "../style/CardStyle";
 import Card from "./Card";
 
-const MyPocketmon = ({ addedPokemons }) => {
+const MyPocketmon = ({ addedPokemons, deletePokemon }) => {
   return (
     <>
       <Wrapper>
@@ -10,7 +9,14 @@ const MyPocketmon = ({ addedPokemons }) => {
 
         <CardWrapper>
           {addedPokemons.map((data) => {
-            return <Card key={data.id} data={data} text={"제거"} />;
+            return (
+              <Card
+                key={data.id}
+                data={data}
+                text={"제거"}
+                deletePokemon={deletePokemon}
+              />
+            );
           })}
           {Array(6 - addedPokemons.length)
             .fill(true)
@@ -65,20 +71,5 @@ const EmptyCard = () => {
     </>
   );
 };
-
-// const AddedCard = ({ data, deletePokemon }) => {
-//   return (
-//     <StyledCard>
-//       <div>
-//         <img src={data.img_url} />
-//         <h3>{data.korean_name}</h3>
-//         <p>no.{data.id}</p>
-//         <Button onClick={deletePokemon} id={data.id}>
-//           제거
-//         </Button>
-//       </div>
-//     </StyledCard>
-//   );
-// };
 
 export default MyPocketmon;
