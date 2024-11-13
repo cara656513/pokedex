@@ -4,7 +4,7 @@ import { Context } from "../context/Context";
 import Card from "./Card";
 
 const MyPocketmon = () => {
-  const { addedPokemons, deletePokemon } = useContext(Context);
+  const { addedPokemons } = useContext(Context);
 
   return (
     <>
@@ -13,14 +13,7 @@ const MyPocketmon = () => {
 
         <CardWrapper>
           {addedPokemons.map((data) => {
-            return (
-              <Card
-                key={data.id}
-                data={data}
-                deletePokemon={deletePokemon}
-                text={"제거"}
-              />
-            );
+            return <Card key={data.id} data={data} text={"제거"} />;
           })}
           {Array(6 - addedPokemons.length)
             .fill(true)

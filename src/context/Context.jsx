@@ -7,7 +7,7 @@ export const Provider = ({ children }) => {
   const [addedPokemons, setAddedPokemon] = useState([]);
 
   //추가
-  const AddPokemon = (e) => {
+  const addPokemon = (e) => {
     e.stopPropagation();
 
     let selectedOne = {
@@ -23,7 +23,7 @@ export const Provider = ({ children }) => {
     }
   };
 
-  const DeletePokemon = (e) => {
+  const deletePokemon = (e) => {
     e.stopPropagation();
 
     let deletedData = addedPokemons.filter((data) => data.id !== +e.target.id);
@@ -35,8 +35,8 @@ export const Provider = ({ children }) => {
     <Context.Provider
       value={{
         addedPokemons,
-        deletePokemon: DeletePokemon,
-        addPokemon: AddPokemon,
+        addPokemon,
+        deletePokemon,
         MOCK_DATA,
       }}
     >
