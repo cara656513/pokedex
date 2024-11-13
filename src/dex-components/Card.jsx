@@ -3,9 +3,9 @@ import { Button, StyledCard } from "../style/CardStyle";
 import { useContext } from "react";
 import { Context } from "../context/Context";
 
-const Card = ({ data }) => {
+const Card = ({ data, text }) => {
   const navigate = useNavigate();
-  const { addPokemon } = useContext(Context);
+  const { addPokemon, deletePokemon } = useContext(Context);
 
   return (
     <StyledCard
@@ -18,8 +18,11 @@ const Card = ({ data }) => {
         <img src={data.img_url} />
         <h3>{data.korean_name}</h3>
         <p>no.{data.id}</p>
-        <Button onClick={addPokemon} id={data.id}>
-          추가
+        <Button
+          onClick={text === "추가" ? addPokemon : deletePokemon}
+          id={data.id}
+        >
+          {text}
         </Button>
       </div>
     </StyledCard>

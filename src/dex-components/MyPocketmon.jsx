@@ -14,7 +14,12 @@ const MyPocketmon = () => {
         <CardWrapper>
           {addedPokemons.map((data) => {
             return (
-              <Card key={data.id} data={data} deletePokemon={deletePokemon} />
+              <Card
+                key={data.id}
+                data={data}
+                deletePokemon={deletePokemon}
+                text={"제거"}
+              />
             );
           })}
           {Array(6 - addedPokemons.length)

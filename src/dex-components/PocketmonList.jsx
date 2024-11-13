@@ -10,7 +10,7 @@ const PocketmonList = () => {
     <>
       <Wrapper>
         {MOCK_DATA.map((data) => {
-          return <Card key={data.id} data={data} />;
+          return <Card key={data.id} data={data} text={"추가"} />;
         })}
       </Wrapper>
     </>
